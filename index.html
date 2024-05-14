@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routing Example</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <style>
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+    
+        .luvu-animation {
+          animation: pulse 1.5s infinite;
+        }
+
+        @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+    </style>
+</head>
+<body>
+   
+     <h1 class="head">Ammu</h1>
+    <!-- Navigation buttons -->
+    <button onclick="navigateToPage('page1')" class="btn-cl">Poem..</button>
+    <button onclick="navigateToPage('page2')" class="btn-cl">i am very </button>
+    <button onclick="navigateToPage('page3')" class="btn-cl">Every Time</button>
+
+    <!-- Page content container -->
+    <div id="pageContent"></div>
+
+    <script>
+        // Function to navigate to different pages
+        function navigateToPage(pageName) {
+            // Update the URL based on the page name
+            window.location.href = '#' + pageName;
+            // Load content based on the page name
+            switch (pageName) {
+                case 'page1':
+                    document.getElementById('pageContent').innerHTML = `
+                        <p class="page1-para">In love, we hold each other close,</p>
+                        <p class="page1-para">With care, we fix what's broke.                    </p>
+                        <p class="page1-para">Together strong, in hearts aglow,                    </p>
+                        <p class="page1-para">Love, hope, and care, our special show." </p>`;
+                    break;
+                
+                case 'page2':
+                    var content = '';
+                    for(var i = 0; i < 100; i++) {
+                        content += '<p class="page2-para">Sorry Muu....</p>';
+                    }
+                    document.getElementById('pageContent').innerHTML =  content;
+                    break;
+                
+                    case 'page3':
+                    document.getElementById('pageContent').innerHTML = `<div class="container" onclick="navigateToPage('page3')">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h1 class="luvu-animation">
+                                    <span class="text-danger">L</span>
+                                    <span class="text-primary">O</span>
+                                    <span class="text-success">V</span>
+                                    <span class="text-warning">E</span>
+                                    <span class="text-danger"> </span>
+                                    <span class="text-primary">U</span>
+                                    <span class="text-success"> </span>
+                                    <span class="text-warning">A</span>
+                                    <span class="text-danger">M</span>
+                                    <span class="text-primary">M</span>
+                                    <span class="text-success">U</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="final-para">Nee Feel Pantra mari naa <br> Nadanthuka Maten Muu....</div>`;
+
+                    break;
+                
+                default:
+                    // Handle invalid page name
+                    document.getElementById('pageContent').innerHTML = '<h1>404 - Page Not Found</h1>';
+            }
+        }
+
+        // Function to load content based on URL hash
+        function loadContent() {
+            // Get the page name from the URL hash
+            var pageName = window.location.hash.substr(1);
+            // Default page if no hash or invalid hash
+            if (pageName === '') {
+                pageName = 'page1';
+            }
+            // Call navigateToPage to load content
+            navigateToPage(pageName);
+        }
+
+        // Call loadContent when the page loads and when the hash changes
+        window.onload = loadContent;
+        window.onhashchange = loadContent;
+    </script>
+</body>
+</html>

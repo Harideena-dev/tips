@@ -1,0 +1,67 @@
+
+.head{
+  color: goldenrod;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 30%
+}  
+
+  /* Define hover and active styles for buttons */
+.btn-cl {
+  /* Your default button styles */
+  background-color: #007bff; /* blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  margin-left: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+}
+
+/* Hover state */
+.btn-cl:hover {
+  background-color: #0056b3; /* darker blue */
+}
+
+/* Active state */
+.btn-cl:active {
+  background-color: #004080; /* even darker blue */
+}
+
+.page1-para{
+  animation: fadeIn 2s ease-in-out;
+  color: red;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 20%;
+  margin-top: 30px;
+}
+.page1-head{
+  color: green;
+  margin: 10px;
+  font-size: 40px;
+  font-weight: 600;
+}
+.page2-para{
+  color: turquoise;
+  font-size: 20px;
+  font-weight: 800;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+
+.final-para{
+  color: chocolate;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 70px;
+  margin-top: 50px;
+}
+
+.luvu-animation{
+ 
+  margin-left: 10px;
+  margin-top: 50px;
+}
